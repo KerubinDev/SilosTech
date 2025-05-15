@@ -381,6 +381,128 @@ header a {
     font-size: 16px; /* Aumentado de 14px */
 }
 
+/* Rolagem Suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Efeitos de Hover nos Links do Menu */
+header a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+header a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #F9A826;
+    transition: width 0.3s ease;
+}
+
+header a:hover::after {
+    width: 100%;
+}
+
+/* Efeito de Hover nos Produtos */
+#produtos .product-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#produtos .product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Efeito de Hover nos Diferenciais */
+#diferenciais .diferencial-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#diferenciais .diferencial-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Efeito de Hover nos Depoimentos */
+#depoimentos .depoimento-item {
+    transition: transform 0.3s ease;
+}
+
+#depoimentos .depoimento-item:hover {
+    transform: scale(1.02);
+}
+
+/* Efeito de Hover nos Botões */
+.btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(249, 168, 38, 0.3);
+}
+
+/* Efeito de Hover nos Representantes */
+#representantes .representante-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#representantes .representante-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Efeito nos Campos de Formulário */
+#contato input[type="text"],
+#contato input[type="email"],
+#contato textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contato input[type="text"]:focus,
+#contato input[type="email"]:focus,
+#contato textarea:focus {
+    border-color: #F9A826;
+    box-shadow: 0 0 0 2px rgba(249, 168, 38, 0.1);
+    outline: none;
+}
+
+/* Animação de Entrada para Seções */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-title {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Efeito de Parallax no Hero */
+#hero {
+    background-attachment: fixed;
+}
+
+/* Efeito de Pulsar no Logo */
+header .logo h1 {
+    transition: transform 0.3s ease;
+}
+
+header .logo h1:hover {
+    transform: scale(1.05);
+}
+
 /* Responsividade */
 @media(max-width: 992px) { /* Tablet */
     .container {
